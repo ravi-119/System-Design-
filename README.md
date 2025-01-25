@@ -1,41 +1,74 @@
 System-Design-
+
 Day1Session 
+
 ✔ System Design is very important to build a scaleable system and applications.
+
 ✔ It will helps me to build a scaleable system and Engineering mindset.
+
 ✔ I think this is the main underline principle to learn  system design.
 
 What is system design? 
+
 ✔ In the world of software high level planning followed by low level planning/detailed planning followed by the final execution the is called a system design.
+
 ✔ After a solid understanding of system design we will move towards the life cycle of a system design. 
+
 In the life cycle of a system deaign there are  some steps to be follow.
+
 ✔ 1 Requirements 
+
 Again Requirements divided into two parts 
 ⏺ Functional requirements
+
 ⏺ Non functional requirements 
+
 ✔ 2 Prioritization/Phase 
+
 ✔ 3 Infrastructure estimations 
+
 Again infrastructure estimations divided into three parts.
+
 ⏺ Storage 
+
 ⏺ Computation 
+
 ⏺ Network 
+
 ⏺ Components 
+
 ⏺ Communication 
+
 And that is called HLD (High Level Design)
+
 ✔ System Design divided into two parts 
+
 ⏺ 1 High Level Design 
+
 ⏺ 2 Low Level Design 
+
 ✔ After mastering and solid understanding of these topics we will move towards. 
+
 ✔ The back of the envelope calculations.
-⏺ Units of time 
+
+⏺ Units of time
+
 ⏺ Comman execution time 
 
 ✔ After the understanding of these stuffs.
+
 We explored more concepts 
+
 ⏺ Cache 
+
 ⏺ Caching mechanism 
+
 ⏺ Reading data from main memory, disk and network 
+
 ⏺ Availability 
+
 ⏺ Query Per Seconds (QPS)
+
 ⏺ System architect 
 
 
