@@ -1,4 +1,4 @@
-<img src=" https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40techy-times%2Fsystem-design-quick-tips-the-detailed-process-c140b32def6c&psig=AOvVaw1yxLmXxUQY-IL2cTUQ46or&ust=1737915848525000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMi305q_kYsDFQAAAAAdAAAAABAK " alt=" System Design ">
+<img src="https://cdn.prod.website-files.com/6529762860f5d2796d4eb495/65e859ddcc41d9e6f8a7ef7b_What%20is%20system%20design-system%20design%20in%20SDLC-grorapidlabs.jpeg" alt=" System Design ">
 
 System-Design-
 
