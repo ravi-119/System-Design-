@@ -1,80 +1,72 @@
-# System-Design-
-#Day1Session 
-☺☺Hello all my Linkedln family here I am just deep diving into hashtag#SystemDesign✔In this post I'll just talk about how the system design is important  terms and concepts that I have learnt in this session.
-✔System Design is very important to build a scaleable system and applications.
-✔It will helps me to build a scaleable system and Engineering mindset.
-✔I think this is the main underline principle to learn  system design.
+System-Design-
+Day1Session 
+✔ System Design is very important to build a scaleable system and applications.
+✔ It will helps me to build a scaleable system and Engineering mindset.
+✔ I think this is the main underline principle to learn  system design.
 
 What is system design? 
-✔In the world of software high level planning followed by low level planning/detailed planning followed by the final execution the is called a system design.
-✔After a solid understanding of system design we will move towards the life cycle of a system design. 
+✔ In the world of software high level planning followed by low level planning/detailed planning followed by the final execution the is called a system design.
+✔ After a solid understanding of system design we will move towards the life cycle of a system design. 
 In the life cycle of a system deaign there are  some steps to be follow.
-✔1 Requirements 
+✔ 1 Requirements 
 Again Requirements divided into two parts 
-⏺Functional requirements
-⏺Non functional requirements 
-
-✔2 Prioritization/Phase 
-
-✔3 Infrastructure estimations 
+⏺ Functional requirements
+⏺ Non functional requirements 
+✔ 2 Prioritization/Phase 
+✔ 3 Infrastructure estimations 
 Again infrastructure estimations divided into three parts.
-⏺Storage 
-⏺Computation 
-⏺Network 
-
-⏺4 Components 
-
-⏺5 Communication 
+⏺ Storage 
+⏺ Computation 
+⏺ Network 
+⏺ Components 
+⏺ Communication 
 And that is called HLD (High Level Design)
-✔System Design divided into two parts 
-⏺1 High Level Design 
-⏺2 Low Level Design 
+✔ System Design divided into two parts 
+⏺ 1 High Level Design 
+⏺ 2 Low Level Design 
+✔ After mastering and solid understanding of these topics we will move towards. 
+✔ The back of the envelope calculations.
+⏺ Units of time 
+⏺ Comman execution time 
 
-✔After mastering and solid understanding of these topics we will move towards. 
-✔The back of the envelope calculations.
-⏺Units of time 
-⏺Comman execution time 
-
-✔After the understanding of these stuffs.
+✔ After the understanding of these stuffs.
 We explored more concepts 
-⏺Cache 
-⏺Caching mechanism 
-⏺Reading data from main memory, disk and network 
-⏺Availability 
-⏺Query Per Seconds (QPS)
-⏺System architect 
+⏺ Cache 
+⏺ Caching mechanism 
+⏺ Reading data from main memory, disk and network 
+⏺ Availability 
+⏺ Query Per Seconds (QPS)
+⏺ System architect 
 
-And I am very thankful to my most favourite mentor ❤❤❤❤ hashtag#vishwamohan sir 
 
-#Day2session 
-😊😊Hello all my linkedln family here I am thrilled to announce that just I deep dive into hashtag#systemdesign 
-✔Today is my day 2 session I engrossed in this session and get more confidence in system design.
-✔It helps me to think about approaches to build a scaleable system and applications.
-✔I have spent 2 to 3 hours to get this valueable knowledge in hashtag#SystemDesign 
-✔In this session I have learnt these terms and concepts.
-⏺Distributed system 
-⏺Vertical scaling 
-⏺Challenges of vertical scaling 
-⏺Horizontal scaling 
-⏺Challenges of horizontal scaling 
-⏺Replication
-⏺Consistency 
-⏺Inconsistency 
-⏺Eventually consistency 
-⏺Availability 
-⏺Reliability 
-✔After mastering these kinds of stuffs I took 5 minutes break 
+Day2session 
+✔ Today is my day 2 session I engrossed in this session and get more confidence in system design.
+✔ It helps me to think about approaches to build a scaleable system and applications.
+✔ I have spent 2 to 3 hours to get this valueable knowledge in hashtag#SystemDesign 
+✔ In this session I have learnt these terms and concepts.
+⏺ Distributed system 
+⏺ Vertical scaling 
+⏺ Challenges of vertical scaling 
+⏺ Horizontal scaling 
+⏺ Challenges of horizontal scaling 
+⏺ Replication
+⏺ Consistency 
+⏺ Inconsistency 
+⏺ Eventually consistency 
+⏺ Availability 
+⏺ Reliability 
+✔ After mastering these kinds of stuffs I took 5 minutes break 
 After break I keep it up and stay motivated to mastering these topics that is .......
 
-⏺CAP THEOREM 
+⏺ CAP THEOREM 
 C = Consistency 
 A = Availability 
 P = Partition tolerance 
-⏺Actual inference of CAP THEOREM 
-⏺Intuitive explanation of CAP THEOREM
-✔After mastering these kinds of stuffs 
+⏺ Actual inference of CAP THEOREM 
+⏺ Intuitive explanation of CAP THEOREM
+✔ After mastering these kinds of stuffs 
 We talked about some interview questions and approaches behind these questions 
-✔This session was very fruitful for me and I am very thankful to my most favourite mentor ❤❤hashtag#vishwamohan sir 
+✔ This session was very fruitful for me and I am very thankful to my most favourite mentor ❤❤hashtag#vishwamohan sir 
 
 #Day3Session 
 
