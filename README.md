@@ -1,3 +1,5 @@
+<img src=" https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40techy-times%2Fsystem-design-quick-tips-the-detailed-process-c140b32def6c&psig=AOvVaw1yxLmXxUQY-IL2cTUQ46or&ust=1737915848525000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMi305q_kYsDFQAAAAAdAAAAABAK " alt=" System Design ">
+
 System-Design-
 
 Day1Session 
