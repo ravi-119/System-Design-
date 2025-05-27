@@ -210,8 +210,180 @@ To improve throughput, optimize every layer of the system (application, database
 
 ---
 
+## What is Availability?
 
+Availability refers to the ability of a system to remain accessible and operational when needed. A highly available system is designed to minimize downtime and ensure that users can access services even in the event of failures.
 
+- **High Availability:**  
+  Achieved by eliminating single points of failure and ensuring that the system can quickly recover from faults.
+
+---
+
+### Replication vs Redundancy
+
+#### Replication
+
+- Replication is the process of copying data or services across multiple servers or locations.
+- It ensures that if one server fails, another can take over with the same data.
+- Common in databases (master-slave, master-master replication) and distributed systems.
+
+**Benefits:**
+  - Improves data availability and reliability.
+  - Enables load balancing for read operations.
+
+#### Redundancy
+
+- Redundancy means having extra components (hardware, software, or network paths) that are not strictly necessary for normal operation.
+- If a primary component fails, the redundant component takes over.
+
+**Benefits:**
+  - Prevents single points of failure.
+  - Increases system reliability and uptime.
+
+---
+
+**Summary:**  
+Both replication and redundancy are strategies to improve system availability. Replication focuses on duplicating data/services, while redundancy provides backup components to handle failures.
+
+---
+
+## What is Consistency in System Design? (Strong vs Eventual Consistency)
+
+Consistency in system design means ensuring that all users see the same data at the same time across a distributed system. It guarantees that after a data update, all nodes reflect the latest value.
+
+### Strong Consistency
+
+- With strong consistency, once data is updated, all users and nodes immediately see the new value.
+- Any read operation always returns the most recent (updated) data.
+- This is critical for systems like banking or finance, where data accuracy is essential.
+
+### Eventual Consistency
+
+- With eventual consistency, data updates are propagated to all nodes over time.
+- For a short period, different users or nodes might see different data, but eventually, all nodes will have the same data.
+- This model is suitable for systems like social media or caching, where temporary differences in data are acceptable.
+
+**Summary:**  
+Strong consistency provides immediate accuracy but can be slower, while eventual consistency is faster but may show outdated data for a short time.
+
+---
+
+## CAP Theorem In Depth
+
+The **CAP theorem** (also known as Brewer's theorem) states that a distributed data system can only provide two out of the following three guarantees at the same time:
+
+1. **Consistency (C):** Every read receives the most recent write or an error. All nodes see the same data at the same time.
+2. **Availability (A):** Every request receives a (non-error) response, even if some nodes are down.
+3. **Partition Tolerance (P):** The system continues to operate despite arbitrary network partitions (communication failures between nodes).
+
+### Why Can't We Have All Three?
+
+In a distributed system, network failures (partitions) can happen. When a partition occurs, the system must choose between:
+- **Consistency:** Refuse requests that can’t guarantee the latest data (sacrificing availability).
+- **Availability:** Serve requests with possibly outdated data (sacrificing consistency).
+
+### Examples
+
+#### 1. CP System (Consistency + Partition Tolerance)
+- **Example:** HBase, MongoDB (in some configurations)
+- **Behavior:** During a network partition, the system will reject requests that can’t guarantee consistency. Availability is sacrificed.
+- **Scenario:** In a banking system, if two branches lose connection, the system may block transactions to prevent inconsistent balances.
+
+#### 2. AP System (Availability + Partition Tolerance)
+- **Example:** Couchbase, Cassandra, DynamoDB
+- **Behavior:** During a partition, the system continues to accept requests, but some may see stale data. Consistency is sacrificed.
+- **Scenario:** In a social media feed, users may see slightly outdated posts during a network issue, but the service remains available.
+
+#### 3. CA System (Consistency + Availability)
+- **Example:** Traditional relational databases (not distributed)
+- **Behavior:** These systems work well as long as there is no partition. If a partition occurs, the system cannot guarantee both consistency and availability.
+- **Scenario:** A single-node SQL database can be both consistent and available, but if the network fails, it cannot tolerate the partition.
+
+### Summary Table
+
+| System Type | Consistency | Availability | Partition Tolerance | Example         |
+|-------------|-------------|--------------|---------------------|-----------------|
+| CP          | Yes         | No           | Yes                 | HBase           |
+| AP          | No          | Yes          | Yes                 | Cassandra       |
+| CA          | Yes         | Yes          | No                  | Single-node SQL |
+
+**Conclusion:**  
+CAP theorem helps architects understand the trade-offs in distributed systems and choose the right design based on application needs.
+
+---
+
+## What is Lamport Logical Clock in System Design?
+
+A **Lamport Logical Clock** is an algorithm used in distributed systems to order events without relying on synchronized physical clocks. It helps determine the sequence of events (such as message sending and receiving) across different nodes in a distributed system.
+
+### How It Works
+
+- Each process in the system maintains a counter (logical clock).
+- When a process performs an event (like sending a message), it increments its counter.
+- When a process sends a message, it includes its current clock value.
+- When a process receives a message, it sets its clock to the maximum of its own clock and the received clock, then increments it by one.
+
+### Why Use Lamport Logical Clock?
+
+- Physical clocks on different machines can be out of sync.
+- Lamport clocks provide a way to establish a partial ordering of events (i.e., which event happened before another).
+- Useful for detecting causality and resolving conflicts in distributed databases, distributed transactions, and coordination protocols.
+
+### Example
+
+1. Process A (clock=1) sends a message to Process B.
+2. Process B receives the message (its clock=2), compares with the received clock (1), sets its clock to max(2,1)+1=3.
+3. This ensures that the event of receiving the message is ordered after the event of sending it.
+
+**Summary:**  
+Lamport Logical Clocks help maintain a consistent event order in distributed systems, even when physical clocks are not synchronized.
+
+---
+
+## Difference Between Horizontal and Vertical Scaling
+
+### Horizontal Scaling (Scaling Out)
+
+- **Definition:** Adding more machines or servers to handle increased load.
+- **How it works:** Distributes traffic and data across multiple servers.
+- **Example:** Adding more web servers behind a load balancer.
+
+**Pros:**
+- Increases capacity and fault tolerance.
+- No single point of failure—if one server fails, others can take over.
+- Easier to scale dynamically in cloud environments.
+- Can handle very large workloads.
+
+**Cons:**
+- More complex to manage and configure (load balancing, data distribution).
+- Requires changes in application architecture to support distributed processing.
+- Potential consistency challenges in distributed systems.
+
+---
+
+### Vertical Scaling (Scaling Up)
+
+- **Definition:** Increasing the resources (CPU, RAM, storage) of a single server.
+- **How it works:** Upgrades the existing server to handle more load.
+- **Example:** Upgrading a server from 8GB RAM to 32GB RAM.
+
+**Pros:**
+- Simple to implement—just upgrade the hardware.
+- No changes needed in application code or architecture.
+- Easier to manage for small-scale systems.
+
+**Cons:**
+- Limited by the maximum capacity of a single machine.
+- Can become a single point of failure.
+- Hardware upgrades can be expensive.
+- Downtime may be required during upgrades.
+
+---
+
+**Summary:**  
+Horizontal scaling adds more servers for increased capacity and reliability, while vertical scaling upgrades a single server’s resources. Horizontal scaling is better for large, distributed systems, while vertical scaling is simpler but limited in growth.
+
+---
 
 ## References
 
