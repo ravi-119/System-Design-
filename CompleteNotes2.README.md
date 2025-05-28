@@ -41,3 +41,51 @@ Replication is the process of copying data or services across multiple systems t
 | Example        | Parallel power units| Standby server       | Multi-master DB      | Master-slave DB       |
 
 ---
+
+## Load Balancer
+
+A **load balancer** is a system component that distributes incoming network traffic or application requests across multiple servers to ensure no single server becomes overwhelmed. This improves responsiveness, increases availability, and provides fault tolerance.
+
+### How Load Balancer Works
+
+- Receives incoming client requests.
+- Distributes requests to backend servers based on a chosen algorithm.
+- Monitors server health and reroutes traffic if a server fails.
+- Can operate at different layers (Layer 4 - Transport, Layer 7 - Application).
+
+### Roles of Load Balancer
+
+- **Distributes Traffic:** Spreads incoming requests evenly across servers.
+- **Fault Tolerance:** Detects server failures and redirects traffic to healthy servers.
+- **Scalability:** Allows addition or removal of servers without downtime.
+- **Security:** Can hide internal server details and help mitigate attacks.
+
+### Challenges of Load Balancer
+
+- **Single Point of Failure:** If not designed redundantly, the load balancer itself can fail.
+- **Session Persistence:** Maintaining user sessions across multiple servers can be complex.
+- **Scalability Limits:** Hardware or software limits may restrict scaling.
+- **Latency:** Improper configuration can introduce delays.
+
+### Advantages of Load Balancer
+
+- **High Availability:** Ensures services remain accessible even if some servers fail.
+- **Improved Performance:** Distributes load, preventing server overload.
+- **Flexibility:** Supports rolling updates and maintenance without downtime.
+- **Efficient Resource Utilization:** Maximizes use of all available servers.
+
+### Load Balancing Algorithms
+
+- **Round Robin:** Requests are distributed sequentially to each server.
+- **Least Connections:** Sends requests to the server with the fewest active connections.
+- **IP Hash:** Uses the client’s IP address to determine which server receives the request.
+- **Weighted Round Robin/Least Connections:** Assigns more requests to more powerful servers.
+- **Random:** Randomly selects a server for each request.
+
+---
+
+
+
+
+
+
