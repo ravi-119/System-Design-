@@ -286,3 +286,184 @@ Modern web and network applications use various models to exchange data between 
 
 **In summary:**  
 Communication protocols and models define how data flows between clients and servers. Choosing the right model (push, pull, long polling, WebSocket, SSE) depends on the application's real-time requirements, scalability needs, and technology stack.
+
+## REST API
+
+**REST (Representational State Transfer) API** is an architectural style for designing networked applications. REST APIs use HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources, which are identified by URLs. REST is stateless, meaning each request from a client contains all the information needed to process it.
+
+### Key Features
+- Stateless communication
+- Uses standard HTTP methods
+- Resource-based (each resource has a unique URL)
+- Supports multiple formats (usually JSON or XML)
+
+### Example
+- `GET /users/123` – Retrieves user with ID 123
+- `POST /orders` – Creates a new order
+
+### Use Case
+- Web and mobile applications interacting with backend services
+
+---
+
+## SOA (Service-Oriented Architecture)
+
+**SOA** is an architectural pattern where software components (services) provide functionality to other components over a network. Each service is independent, loosely coupled, and communicates using standard protocols (often SOAP or REST).
+
+### Key Features
+- Services are reusable and discoverable
+- Platform and language independent
+- Supports integration of heterogeneous systems
+
+### Example
+- A payment service, inventory service, and shipping service in an e-commerce platform, each exposed as a separate service
+
+### Use Case
+- Large enterprises integrating legacy systems and new applications
+
+---
+
+## Microservices Architecture
+
+**Microservices architecture** is a style where an application is built as a collection of small, independent services, each responsible for a specific business capability. Each microservice can be developed, deployed, and scaled independently.
+
+### Key Features
+- Each service has its own database and deployment lifecycle
+- Services communicate via lightweight protocols (usually REST or messaging)
+- Enables continuous delivery and scalability
+
+### Example
+- An online store with separate microservices for user management, product catalog, order processing, and notifications
+
+### Use Case
+- Modern cloud-native applications, large-scale web platforms
+
+---
+
+## Two-Tier Architecture
+
+**Two-tier architecture** is a client-server architecture where the user interface runs on the client and the database is stored on the server. The client communicates directly with the database server.
+
+### Key Features
+- Simple and easy to implement
+- Direct communication between client and database
+
+### Example
+- A desktop application that connects directly to a SQL database
+
+### Use Case
+- Small-scale applications, internal tools
+
+---
+
+## N-Tier (Multi-Tier) Architecture
+
+**N-tier architecture** (often three-tier) separates an application into multiple layers or tiers, each with a specific responsibility. The most common is three-tier:
+
+1. **Presentation Tier:** User interface (web browser, mobile app)
+2. **Application/Logic Tier:** Business logic (web server, application server)
+3. **Data Tier:** Database server
+
+### Key Features
+- Separation of concerns
+- Improved scalability, maintainability, and security
+
+### Example
+- A web application where:
+  - The browser (presentation tier) sends requests to a web server (application tier)
+  - The web server processes logic and interacts with a database (data tier)
+
+### Use Case
+- Enterprise web applications, scalable and secure systems
+
+---
+
+**Summary Table**
+
+| Architecture      | Layers/Tiers         | Example Use Case                  |
+|-------------------|----------------------|-----------------------------------|
+| REST API          | Resource endpoints   | Web/mobile backend                |
+| SOA               | Services             | Enterprise integration            |
+| Microservices     | Independent services | Cloud-native, scalable platforms  |
+| Two-Tier          | Client, Database     | Small apps, desktop tools         |
+| N-Tier            | UI, Logic, Data      | Enterprise web applications       |
+
+
+
+
+
+
+
+
+
+
+## Difference between Authentication and Authorization
+
+Authentication and authorization are two fundamental concepts in security, especially in web and application development. Though often used together, they serve different purposes.
+
+---
+
+### Authentication
+
+**Definition:**  
+Authentication is the process of verifying the identity of a user or system. It answers the question: **"Who are you?"**
+
+**How it Works:**  
+- The user provides credentials (such as username and password, biometrics, or tokens).
+- The system checks these credentials against its records.
+- If the credentials are valid, the user is authenticated (i.e., their identity is confirmed).
+
+**Example:**  
+- When you log in to your email account, you enter your username and password. The system checks if these match its records and, if so, lets you in.
+
+**Common Methods:**
+- Password-based login
+- OTP (One-Time Password)
+- Biometric authentication (fingerprint, face recognition)
+- OAuth tokens (e.g., "Login with Google")
+
+---
+
+### Authorization
+
+**Definition:**  
+Authorization is the process of determining what an authenticated user is allowed to do. It answers the question: **"What are you allowed to do?"**
+
+**How it Works:**  
+- After authentication, the system checks the user's permissions or roles.
+- Based on these permissions, the system grants or denies access to specific resources or actions.
+
+**Example:**  
+- After logging in to your email, you can read your emails but cannot access the admin panel unless you have admin privileges.
+
+**Common Methods:**
+- Role-based access control (RBAC)
+- Access control lists (ACL)
+- Permissions and policies
+
+---
+
+### Key Differences
+
+| Aspect           | Authentication                        | Authorization                          |
+|------------------|---------------------------------------|----------------------------------------|
+| Purpose          | Verifies identity                     | Grants or denies access/permissions    |
+| Question Answered| Who are you?                          | What can you do?                       |
+| Performed When   | Before authorization                   | After authentication                   |
+| Data Used        | Credentials (password, token, etc.)   | Roles, permissions, policies           |
+| Example          | Login with username & password        | Accessing admin dashboard              |
+
+---
+
+### Real-World Example
+
+- **Authentication:**  
+  You swipe your access card at the office entrance. The system checks if the card is valid and lets you in.
+- **Authorization:**  
+  Once inside, you try to enter the server room. The system checks if your role allows access to that room. If not, access is denied.
+
+---
+
+**Summary:**  
+- **Authentication** confirms your identity.
+- **Authorization** determines what you are allowed to do after your identity is confirmed.
